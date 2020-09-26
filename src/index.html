@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
-    <script src="app.bundle.js"></script>
 </head>
 
 <body>
@@ -63,48 +62,5 @@
         </div>
     </div>
 </div>
-<script>
-    window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
-    window.castReceiverManager.start();
-    window.castReceiverManager.onSenderDisconnected = function (event) {
-        if (window.castReceiverManager.getSenders().length == 0 &&
-            event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
-            window.close();
-        }
-    };
-    (function() {
-        function fetchRoomInfo() {
-            fetch('http://10.0.0.7:8001/launcher/roominfo')
-                .then(function (response) {
-                    if (response.status == 200) {
-                        return response.json();
-                    } else {
-                        var image = document.getElementById('qr-code');
-                        image.src = "placeholder.png";
-                        document.getElementById("code-span").textContent = "";
-                    }
-                })
-                .then(function (myJson) {
-                    if (myJson) {
-                        const url = new URL(myJson);
-                        document.getElementById("code-span").textContent = "Fill in your room details and enter code: "+url.searchParams.get("passcode");
-                        var qr = new QRious({
-                            element: document.getElementById('qr-code'),
-                            value: myJson,
-                            size: 250,
-                        });
-                        document.getElementById("room-number").textContent = url.searchParams.get("roomno");
-                        document.getElementById("code-span").textContent = "Fill in your room details and enter code: "+ url.searchParams.get("passcode");
-                    }
-                })
-                .catch(function (error) {
-                    console.log("Unable to connect to connect server.")
-                });
-        }
-        fetchRoomInfo();
-        window.setInterval(fetchRoomInfo, 10000);
-    })();
-
-</script>
 </body>
 </html>
