@@ -15,7 +15,7 @@ window.castReceiverManager.onSenderDisconnected = function (event) {
 };
 (function() {
     function fetchRoomInfo() {
-        fetch('http://10.0.0.7:8001/launcher/roominfo')
+        fetch('http://10.130.10.220:80/launcher/roominfo')
             .then(function (response) {
                 if (response.status == 200) {
                     return response.json();
