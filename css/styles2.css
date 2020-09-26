@@ -1,0 +1,264 @@
+html {
+    height: 100%;
+}
+
+body {
+    color: #ffffff;
+    height: 100%;
+}
+
+ol {
+    list-style: decimal;
+}
+
+.navbar {
+    position: fixed;
+    top: 5%;
+    left: 3.6%;
+    z-index: 2;
+}
+
+.url-text ol {
+    padding-left: 1.59091rem;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    text-align: left;
+}
+
+.carousel-indicators li, .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+
+.caption-heading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-family: Nunito Sans;
+}
+
+.caption-para {
+    font-size: 1rem;
+    padding-left: 0.04545rem;
+    padding-top: 0.45455rem;
+    line-height: 1.54545rem;
+    font-family: Nunito Sans;
+}
+
+section {
+    background: #363636;
+}
+
+.bgnd {
+    height: 40vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.qr-text, .url-text {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.qr-text h2, .url-text h2 {
+    font-size: 1.77273rem;
+    font-family: Nunito Sans;
+    margin-bottom: 1.81818rem;
+}
+
+.qr-text h2 {
+    margin-left: 2.72727rem;
+}
+
+.url-text h2 {
+    margin-top: -1.13636rem;
+}
+
+.qr-img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+.qr-text ol {
+    display: inline-block;
+    padding-left: 3.40909rem;
+    margin-top: -3.13636rem;
+}
+
+.qr-text ol li, .url-text ol li {
+    font-family: Nunito Sans;
+    line-height: 1.95455rem;
+    font-size: 1.09091rem;
+    font-weight: 100;
+}
+
+.line-circle {
+    width: 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img-text {
+    padding-top: 10%;
+}
+
+.circle {
+    z-index: 2;
+    width: 5.13636rem;
+    height: 5.13636rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: #363636;
+}
+
+.circle span {
+    top: 30%;
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    height: 14.36364rem;
+    width: 2px;
+    background-color: #ffffff;
+}
+
+.column-style {
+    background-color: #000000;
+}
+
+.header-style {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-family: Nunito Sans;
+    margin-left: 20px;
+    height: 60px
+}
+
+.row-bottom {
+    margin-top: 20px;
+    min-height: 80%;
+}
+
+.row-top {
+    margin-top: 20px;
+    min-height: 10%;
+}
+
+.caption-large {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-family: Nunito Sans;
+}
+
+.caption-medium {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-family: Nunito Sans;
+    vertical-align: top;
+}
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+    .caption-small {
+        font-size: 0.3rem;
+        line-height: 0.8rem;
+        font-family: Nunito Sans;
+        vertical-align: top;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .caption-small {
+        font-size: 0.5rem;
+        line-height: 1.0rem;
+        font-family: Nunito Sans;
+        vertical-align: top;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .caption-small {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        font-family: Nunito Sans;
+        vertical-align: top;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .caption-small {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        font-family: Nunito Sans;
+        vertical-align: top;
+    }
+}
+
+.span-centre {
+    display: table;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.span-centre-2 {
+    display: table;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+}
+
+.container-fluid {
+    min-height: 100%;
+    height: 100%;
+}
+
+.column-full {
+    min-height: 100%;
+}
+
+.wifi-style {
+    padding-top: 20%;
+    text-align: center;
+}
+
+.chromecast-style {
+    padding-top: 40%;
+    text-align: center;
+}
+
+.bottom-div {
+    position: absolute;
+    margin-left: -15px;
+    bottom: 10px;
+    width: 100%
+}
+
+td {
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.chromecast-img {
+    margin-left: 50px;
+}

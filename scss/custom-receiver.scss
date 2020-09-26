@@ -1,0 +1,130 @@
+//out:../css/styles.css
+
+$px : 22;
+
+@mixin px-to-rem($property , $unit){
+  #{$property}:  #{$unit/$px}rem
+}
+body{
+    margin : 0;
+    color : #ffffff;
+}
+ol{
+    list-style:decimal; 
+}
+.navbar{
+    position :fixed;
+    top: 5%;
+    left:3.6%;
+    z-index :2;
+}
+.url-text ol{
+    @include px-to-rem( padding-left, 35 );
+}
+.carousel-caption{
+    position : absolute;
+    top : 30%;
+    left : 5%;
+    text-align : left;
+}
+.carousel-indicators li,.carousel-indicators .active{
+    width : 15px;
+    height : 15px;
+    margin : 5px;
+}
+.caption-heading{
+    @include px-to-rem( font-size, 44 );
+    @include px-to-rem( line-height, 55 );
+    font-family : Nunito Sans ;
+}
+.caption-para{
+    @include px-to-rem( font-size, 22 );
+    @include px-to-rem( padding-left, 1 );
+    @include px-to-rem( padding-top, 10 );
+    @include px-to-rem( line-height,34 );
+    font-family : Nunito Sans ;
+ }
+ section{
+    background : #363636;
+ }
+ .bgnd{
+    height : 40vh;
+    width : 100%;
+    margin : 0;
+    display : flex;
+    justify-content : center;
+    box-sizing : border-box;
+ }
+ .qr-text,.url-text{
+     width : 45%;
+     display : flex;
+     align-items : center;
+     justify-content : center;
+     flex-direction : column;
+ }
+.qr-text h2,.url-text h2{
+    @include px-to-rem( font-size, 39 );
+    font-family : Nunito Sans;
+    @include px-to-rem( margin-bottom, 40 );    
+}
+.qr-text h2{
+    @include px-to-rem( margin-left, 60 );
+}
+.url-text h2{
+    @include px-to-rem( margin-top, -25 );
+}
+.qr-img{
+    display : inline-block;
+    @include px-to-rem( width, 200 );
+    @include px-to-rem( height, 200 );
+    @include px-to-rem( margin-left, -50 );
+}
+.qr-text ol{
+    display : inline-block;
+    @include px-to-rem( padding-left, 75 );
+    @include px-to-rem( margin-top, -69 );
+}
+
+.qr-text ol li,.url-text ol li{
+    font-family : Nunito Sans;    
+    @include px-to-rem( line-height, 43 );
+    @include px-to-rem( font-size, 24 );
+    font-weight:100;
+}
+.line-circle{
+    width: 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.img-text{
+    display:flex;
+    align-items: center;
+}
+.circle{
+    z-index : 2;
+    @include px-to-rem( width, 113 );
+    @include px-to-rem( height, 113 );
+    border-radius : 50%;
+    border : 2px solid white;
+    background: #363636;
+} 
+.circle span{
+       top: 30%;
+       position: relative;
+       display: block;
+       height: 100%;
+}
+.line{
+    position: absolute;
+    left: 50%;
+    @include px-to-rem( height, 316 );
+    width: 2px;
+    background-color: #ffffff;
+}
+
+
+
+

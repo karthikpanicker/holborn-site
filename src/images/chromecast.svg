@@ -1,0 +1,10 @@
+<svg id="chromecast" xmlns="http://www.w3.org/2000/svg" width="204.1" height="157.11" viewBox="0 0 204.1 157.11">
+  <g id="Layer_5" data-name="Layer 5">
+    <g id="Layer_1_copy" data-name="Layer 1 copy">
+      <path id="Path_7" data-name="Path 7" d="M185.78,0H19.42A18.34,18.34,0,0,0,1.1,18.32V23h8V18.32A10.33,10.33,0,0,1,19.42,8H185.78A10.33,10.33,0,0,1,196.1,18.32V136.68A10.33,10.33,0,0,1,185.78,147H136.1v8h49.68a18.34,18.34,0,0,0,18.32-18.32V18.32A18.34,18.34,0,0,0,185.78,0Z" fill="#fff"/>
+      <path id="Path_8" data-name="Path 8" d="M1,38H0l.06,8H1A110.18,110.18,0,0,1,111.05,156v1l8,.08v-1A118.19,118.19,0,0,0,1,38Z" fill="#fff"/>
+      <path id="Path_9" data-name="Path 9" d="M1,77H.05l.1,8H1a71.19,71.19,0,0,1,71.11,71.11v.88l8,.1v-.98A79.2,79.2,0,0,0,1,77Z" fill="#fff"/>
+      <path id="Path_10" data-name="Path 10" d="M1,115H0l.2,8H1a33.14,33.14,0,0,1,33.09,33.09q0,.225,0,.45v.39l8,.18v-1.02A41.14,41.14,0,0,0,1,115Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

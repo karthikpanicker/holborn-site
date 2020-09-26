@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Bebas-Bold';
+    src: url("fonts/BebasNeue-Bold.otf");
+}
+@font-face {
+    font-family: 'NextExit-Light';
+    src: url("fonts/NextExitFOT-Light.otf");
+}
+@font-face {
+    font-family: 'NextExit-Bold';
+    src: url("fonts/NextExitFOT-Bold.otf");
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url("images/bgnyx.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.roombox {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin-top: 49px;
+	width: 420px;
+	height: 100px;
+	padding-top: 10px;
+	padding-left: 70px;
+	background-image: linear-gradient(to right,transparent 5%, #000000 90%);
+    font-size: 2rem;
+    font-family: NextExit-Light;
+	text-align: center;
+}
+
+.roomnumber {
+	font-size: 4rem;
+}
+
+.container-fluid {
+    min-height: 100%;
+    height: 100%;
+}
+
+.row-top {
+    height: 30%;
+    z-index: 2;
+}
+
+.row-middle {
+	height: 10%;
+    background-color: rgba(86,86,86,0.2);
+}
+
+.row-bottom {
+    height: 50%;
+    background-color: rgba(86,86,86,0.2);
+}
+
+.row-bottom-low {
+    height: 10%;
+	background-image: url("images/line.png");
+	background-position: top;
+	background-repeat: no-repeat;
+}
+
+.welcome-line {
+    font-family: Bebas-Bold;
+    font-size: 3.6rem;
+    margin-left: 60px;
+    margin-top: 40px;
+	padding-left: 270px;
+    z-index: 100;
+	min-height: 260px;
+	min-width: 240px;
+	background-image: url("images/nyx.png");
+	/*background-position: left 9px;*/
+	background-repeat: no-repeat;
+    background-size: 170px 65%;
+}
+
+.punch-line {
+    font-size: 1.7rem;
+    font-family: NextExit-Light;
+    margin-left: 37px;
+	padding-top: 8px;
+}
+
+.instruction-heading {
+    margin-left: 40px;
+	margin-top: 20px;
+    font-family: NextExit-Light;
+    font-size: 1.2rem;
+}
+
+.instruction-middle {
+    margin-left: 120px;
+	margin-top: 15px;
+    font-family: NextExit-Light;
+    font-size: 1.2rem;
+}
+
+.elem {
+    width: 33%;
+    min-height: 380px;
+
+    position: relative;
+    border: none;
+    margin: 0 auto;
+}
+
+.elem-arrow {
+	width: 100%;
+	height: 100%;
+
+	background-image: url("images/arrow.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: 70% 70%;
+}
+
+.elem-castlogo {
+	height: 100%;
+	background-image: url("images/castlogo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size:60% 60%;
+}
+
+.caption-large {
+    font-size: 1.8rem;
+    font-family: Bebas-Bold;
+    padding-left: 10px;
+}
+
+.caption-medium {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-family: NextExit-Light;
+	padding-left: 10px;
+}
+
+.caption-medium-bottom {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    font-family: NextExit-Light;
+}
+
+.bottom-div {
+    position: absolute;
+    bottom: 50px;
+    width: 100%
+}
+
+.wifi-style {
+    padding-top: 10%;
+    text-align: center;
+}
+
+.span-centre {
+    display: table;
+    margin: 0 auto;
+    font-size: 2rem;
+    padding-bottom: 50px;
+    font-family: NextExit-Light;
+}
+
+.top-left-shade {
+    position: absolute;
+    height: 60%;
+    width:30%;
+    top:0;
+    z-index:-1;
+    background: linear-gradient(to bottom,transparent 20%, #231F2050), linear-gradient(to right,#ffffff 10%, #ffffff00),
+    linear-gradient(to right,#ffffff, #ffffff00);
+    background-blend-mode: multiply;
+}
+
+.qr-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 72%;
+	height: 72%;
+	background-color: #333;
+
+    margin-top: 3%;
+}
+
+.span-centre-2 {
+    margin: 0 auto;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    font-family: NextExit-Light;
+}
+
+.chromecast-style {
+    padding-top: 20%;
+    text-align: center;
+}
+.column-style{
+    width: 25%;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-top: 4px;
+}
+
+.hide-me {
+	display: inline;
+	opacity: 0;
+}
+.orange-i {
+	display: inline;
+	color: #e87820;
+}
+.boldfont {
+	font-weight: bold;
+}
+
+.nextexitfont {
+	font-family: NextExit-Bold;
+}
