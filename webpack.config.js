@@ -1,9 +1,25 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        app: './src/index.js',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: '2cast.tv',
+            template: './src/index.html',
+            filename: 'index.html'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/images/placeholder.png', to: '' }
+            ],
+        }),
+    ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -26,7 +42,8 @@ module.exports = {
                 use: [
                     'file-loader',
                 ],
-            },
+            }
+
         ],
     },
 };
