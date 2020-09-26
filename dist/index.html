@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2cast.tv</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet">
+    <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <script src="bundle.js"></script>
+</head>
+
+<body>
+<div class="roombox">
+    <div>Room:</div>
+    <div><span id="room-number" class="roomnumber"></span></div>
+</div>
+<div class="container-fluid">
+    <div class="row row-top">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="welcome-line">
+                <div class="orange-i">i</div><div class="hide-me">i</div>Welcome to NYX Hotels
+                <div class="punch-line">Explore. Share. Enjoy. Unwind</div>
+                <div class="instruction-heading">
+                    <div>To watch Television - Please use the</div>
+                    <div style="margin-top: 0.3%">P+ or P- buttons on your remote.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-middle">
+        <div class="instruction-middle">
+            <div>TO CAST&nbsp;&nbsp;|&nbsp;&nbsp;Connect to <span class="boldfont nextexitfont">NYX Wi-Fi</span> and follow the instructions below.</div>
+        </div>
+    </div>
+    <div class="row row-bottom">
+        <div class="elem">
+            <div><span class="caption-large" style="padding-left: 20%;">STEP 1: </span><span class="caption-medium" style="vertical-align: top;">Scan the QR Code below*</span></div>
+            <div class="img-text">
+                <img src="../src/images/placeholder.png" alt="Loading QR Code" id="qr-code" class="qr-img img-fluid"/>
+            </div>
+        </div>
+        <div class="elem">
+            <div class="elem-arrow"></div>
+        </div>
+        <div class="elem elem-castlogo">
+            <div><span class="caption-large">STEP 2: </span><span class="caption-medium" style="vertical-align: top;">Open your cast enabled app, then look</span></div>
+            <div style="padding-left: 80px;"><span class="caption-medium">for the casting icon (image below)</span></div>
+            <div class="bottom-div" style="text-align: center;">
+                <div>
+                    <span class="caption-medium" >An example of casting friendly apps</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-bottom-low">
+        <div style="width: 100%; text-align: center; padding-top: 15px;">
+            <div>
+                <span class="caption-medium-bottom">*If you are unable to scan the QR code, open your browser and navigate to: <span class="boldfont">2cast.tv</span></span>
+            </div>
+            <div>
+                <span id="code-span" class="caption-medium-bottom">Fill in your room details and enter code: </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+    window.castReceiverManager.start();
+    window.castReceiverManager.onSenderDisconnected = function (event) {
+        if (window.castReceiverManager.getSenders().length == 0 &&
+            event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
+            window.close();
+        }
+    };
+    (function() {
+        function fetchRoomInfo() {
+            fetch('http://10.130.10.220:80/launcher/roominfo')
+                .then(function (response) {
+                    if (response.status == 200) {
+                        return response.json();
+                    } else {
+                        var image = document.getElementById('qr-code');
+                        image.src = "../common/images/placeholder.png";
+                        document.getElementById("code-span").textContent = "";
+                    }
+                })
+                .then(function (myJson) {
+                    if (myJson) {
+                        const url = new URL(myJson);
+                        document.getElementById("code-span").textContent = "Fill in your room details and enter code: "+url.searchParams.get("passcode");
+                        var qr = new QRious({
+                            element: document.getElementById('qr-code'),
+                            value: myJson,
+                            size: 250,
+                        });
+                        document.getElementById("room-number").textContent = url.searchParams.get("roomno");
+                        document.getElementById("code-span").textContent = "Fill in your room details and enter code: "+ url.searchParams.get("passcode");
+                    }
+                })
+                .catch(function (error) {
+                    console.log("Unable to connect to connect server.")
+                });
+        }
+        fetchRoomInfo();
+        window.setInterval(fetchRoomInfo, 10000);
+    })();
+
+</script>
+</body>
+</html>
