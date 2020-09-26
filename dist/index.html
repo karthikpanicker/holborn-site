@@ -45,7 +45,7 @@
         <div class="elem">
             <div><span class="caption-large" style="padding-left: 20%;">STEP 1: </span><span class="caption-medium" style="vertical-align: top;">Scan the QR Code below*</span></div>
             <div class="img-text">
-                <img src="../src/images/placeholder.png" alt="Loading QR Code" id="qr-code" class="qr-img img-fluid"/>
+                <img src="images/placeholder.png" alt="Loading QR Code" id="qr-code" class="qr-img img-fluid"/>
             </div>
         </div>
         <div class="elem">
@@ -83,7 +83,7 @@
     };
     (function() {
         function fetchRoomInfo() {
-            fetch('http://10.130.10.220:80/launcher/roominfo')
+            fetch('http://10.0.0.7:8001/launcher/roominfo')
                 .then(function (response) {
                     if (response.status == 200) {
                         return response.json();
